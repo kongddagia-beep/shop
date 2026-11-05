@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매직 오브 스톰</title>
+
+  <!-- ===== 여기부터 "꾸미기(CSS)" 영역 ===== -->
+  <style>
+    /* 페이지 전체 기본 설정 */
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+    }
+
+    /* 맨 위 가게 이름 영역 */
+    header {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* 상품들을 바둑판처럼 나열하는 칸 */
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* 상품 하나하나의 카드 */
+    .product {
+      background-color: white;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    /* 상품 사진 자리 (지금은 이모지로 대신) */
+    .photo {
+      font-size: 60px;
+      background-color: #eee;
+      border-radius: 8px;
+      padding: 20px 0;
+    }
+
+    .name  { margin: 10px 0 4px; font-size: 16px; }
+    .price { margin: 0; color: #e53935; font-weight: bold; }
+  </style>
+</head>
+
+<body>
+  <!-- ===== 여기부터 "내용(HTML)" 영역 ===== -->
+
+  <header>
+    <h1>매직 오브 스톰</h1>
+    <p>편하게 입는 데일리룩</p>
+  </header>
+
+  <div class="product-list">
+
+    <!-- 상품 1개 = 아래 div 한 덩어리 -->
+    <div class="product">
+      <div class="photo">👕</div>
+      <h3 class="name">기본 반팔 티셔츠</h3>
+      <p class="price">15,000원</p>
+    </div>
+
+    <div class="product">
+      <div class="photo">👖</div>
+      <h3 class="name">와이드 청바지</h3>
+      <p class="price">39,000원</p>
+    </div>
+
+    <div class="product">
+      <div class="photo">🧥</div>
+      <h3 class="name">겨울 패딩 점퍼</h3>
+      <p class="price">89,000원</p>
+    </div>
+
+    <div class="product">
+      <div class="photo">👔</div>
+      <h3 class="name">옥스포드 셔츠</h3>
+      <p class="price">29,000원</p>
+    </div>
+
+    <div class="product">
+      <div class="photo">🧣</div>
+      <h3 class="name">니트 목도리</h3>
+      <p class="price">12,000원</p>
+    </div>
+
+    <div class="product">
+      <div class="photo">🧢</div>
+      <h3 class="name">볼캡 모자</h3>
+      <p class="price">18,000원</p>
+    </div>
+
+  </div>
+</body>
+</html>
