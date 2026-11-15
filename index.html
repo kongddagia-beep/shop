@@ -51,6 +51,29 @@
 
     .name  { margin: 10px 0 4px; font-size: 16px; }
     .price { margin: 0; color: #e53935; font-weight: bold; }
+
+    /* 상품 카드 안의 "장바구니 담기" 버튼 */
+    .add-btn {
+      margin-top: 10px;
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 6px;
+      background-color: #222;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .add-btn:hover { background-color: #444; }
+
+    /* 맨 위에 보이는 장바구니 개수/합계 */
+    .cart {
+      display: inline-block;
+      padding: 6px 14px;
+      background-color: #e53935;
+      border-radius: 20px;
+      font-size: 14px;
+    }
   </style>
 </head>
 
@@ -60,6 +83,7 @@
   <header>
     <h1>매직 오브 스톰</h1>
     <p>편하게 입는 데일리룩</p>
+    <div class="cart">🛒 장바구니 <span id="cart-count">0</span>개 · <span id="cart-total">0</span>원</div>
   </header>
 
   <div class="product-list">
@@ -69,44 +93,75 @@
       <div class="photo">👕</div>
       <h3 class="name">기본 반팔 티셔츠</h3>
       <p class="price">15,000원</p>
+      <button class="add-btn" onclick="addToCart(this, 15000)">장바구니 담기</button>
     </div>
 
     <div class="product">
       <div class="photo">👗</div>
       <h3 class="name">플리스 원피스</h3>
       <p class="price">45,000원</p>
+      <button class="add-btn" onclick="addToCart(this, 45000)">장바구니 담기</button>
     </div>
 
     <div class="product">
       <div class="photo">👖</div>
       <h3 class="name">와이드 청바지</h3>
       <p class="price">39,000원</p>
+      <button class="add-btn" onclick="addToCart(this, 39000)">장바구니 담기</button>
     </div>
 
     <div class="product">
       <div class="photo">🧥</div>
       <h3 class="name">겨울 패딩 점퍼</h3>
       <p class="price">89,000원</p>
+      <button class="add-btn" onclick="addToCart(this, 89000)">장바구니 담기</button>
     </div>
 
     <div class="product">
       <div class="photo">👔</div>
       <h3 class="name">옥스포드 셔츠</h3>
       <p class="price">29,000원</p>
+      <button class="add-btn" onclick="addToCart(this, 29000)">장바구니 담기</button>
     </div>
 
     <div class="product">
       <div class="photo">🧣</div>
       <h3 class="name">니트 목도리</h3>
       <p class="price">12,000원</p>
+      <button class="add-btn" onclick="addToCart(this, 12000)">장바구니 담기</button>
     </div>
 
     <div class="product">
       <div class="photo">🧢</div>
       <h3 class="name">볼캡 모자</h3>
       <p class="price">18,000원</p>
+      <button class="add-btn" onclick="addToCart(this, 18000)">장바구니 담기</button>
     </div>
 
   </div>
+
+  <!-- ===== 여기부터 "움직이기(JavaScript)" 영역 ===== -->
+  <script>
+    // 장바구니에 담긴 개수와 합계 금액 (처음엔 둘 다 0)
+    let cartCount = 0;
+    let cartTotal = 0;
+
+    // "장바구니 담기" 버튼을 누르면 실행되는 함수
+    // button = 누른 버튼, price = 그 상품 가격
+    function addToCart(button, price) {
+      cartCount = cartCount + 1;
+      cartTotal = cartTotal + price;
+
+      // 맨 위 장바구니 숫자 바꾸기 (toLocaleString = 15000 → 15,000)
+      document.getElementById('cart-count').textContent = cartCount;
+      document.getElementById('cart-total').textContent = cartTotal.toLocaleString('ko-KR');
+
+      // 버튼 글자를 1초 동안 바꿔서 "담겼다"는 걸 보여주기
+      button.textContent = '담았어요 ✓';
+      setTimeout(function () {
+        button.textContent = '장바구니 담기';
+      }, 1000);
+    }
+  </script>
 </body>
 </html>
