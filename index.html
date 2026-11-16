@@ -41,12 +41,14 @@
       text-align: center;
     }
 
-    /* 상품 사진 자리 (지금은 이모지로 대신) */
+    /* 상품 사진 */
     .photo {
-      font-size: 60px;
+      width: 100%;
+      aspect-ratio: 3 / 4;   /* 세로가 조금 긴 옷 사진 비율 */
+      object-fit: cover;     /* 사진이 찌그러지지 않게 꽉 채우기 */
       background-color: #eee;
       border-radius: 8px;
-      padding: 20px 0;
+      display: block;
     }
 
     .name  { margin: 10px 0 4px; font-size: 16px; }
@@ -66,43 +68,43 @@
 
     <!-- 상품 1개 = 아래 div 한 덩어리 -->
     <div class="product">
-      <div class="photo">👕</div>
+      <img class="photo" src="images/tshirt.jpg" alt="기본 반팔 티셔츠">
       <h3 class="name">기본 반팔 티셔츠</h3>
       <p class="price">15,000원</p>
     </div>
 
     <div class="product">
-      <div class="photo">👗</div>
+      <img class="photo" src="images/dress.jpg" alt="플리스 원피스">
       <h3 class="name">플리스 원피스</h3>
       <p class="price">45,000원</p>
     </div>
 
     <div class="product">
-      <div class="photo">👖</div>
+      <img class="photo" src="images/jeans.jpg" alt="와이드 청바지">
       <h3 class="name">와이드 청바지</h3>
       <p class="price">39,000원</p>
     </div>
 
     <div class="product">
-      <div class="photo">🧥</div>
+      <img class="photo" src="images/padding.jpg" alt="겨울 패딩 점퍼">
       <h3 class="name">겨울 패딩 점퍼</h3>
       <p class="price">89,000원</p>
     </div>
 
     <div class="product">
-      <div class="photo">👔</div>
+      <img class="photo" src="images/shirt.jpg" alt="옥스포드 셔츠">
       <h3 class="name">옥스포드 셔츠</h3>
       <p class="price">29,000원</p>
     </div>
 
     <div class="product">
-      <div class="photo">🧣</div>
+      <img class="photo" src="images/muffler.jpg" alt="니트 목도리">
       <h3 class="name">니트 목도리</h3>
       <p class="price">12,000원</p>
     </div>
 
     <div class="product">
-      <div class="photo">🧢</div>
+      <img class="photo" src="images/cap.jpg" alt="볼캡 모자">
       <h3 class="name">볼캡 모자</h3>
       <p class="price">18,000원</p>
     </div>
